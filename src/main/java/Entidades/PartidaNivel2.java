@@ -1,10 +1,15 @@
 package Entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PartidaNivel2 extends Partida {
 
-    List<Recinto> recintosCorrectos;
+    List<Recinto> recintosCorrectos = new ArrayList<>();
+
+    public PartidaNivel2(){
+        super();
+    }
 
     public PartidaNivel2(int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
                          int numeroDesvios) {
@@ -47,5 +52,7 @@ public class PartidaNivel2 extends Partida {
 
 
     }
+
+
 
 }

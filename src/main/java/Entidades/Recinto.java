@@ -1,25 +1,23 @@
 package Entidades;
 
 
-
-
 public class Recinto {
 
-    public enum ValoresRecinto{
+    public enum ValoresRecinto {
         Llama("Ll"),
-                Elefante("E"),
-                Picnic("P"),
-                Pajaro("Pa"),
-                Cafe("C"),
-                Camello("Ca"),
-                Entrada("E"),
-                Oso("O"),
-                Cocodrilo("Co"),
-                Mono("M"),
-                MamiferosPequenos("Mp"),
-                Leones("L"),
-                Tigres("T"),
-                Reptiles("R");
+        Elefante("E"),
+        Picnic("P"),
+        Pajaro("Pa"),
+        Cafe("C"),
+        Camello("Ca"),
+        Entrada("E"),
+        Oso("O"),
+        Cocodrilo("Co"),
+        Mono("M"),
+        MamiferosPequenos("Mp"),
+        Leones("L"),
+        Tigres("T"),
+        Reptiles("R");
 
 
         String code;
@@ -32,7 +30,8 @@ public class Recinto {
 
 
     public ValoresRecinto recinto;
-    public Recinto(ValoresRecinto recinto){
+
+    public Recinto(ValoresRecinto recinto) {
         this.recinto = recinto;
     }
 

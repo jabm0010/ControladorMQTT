@@ -8,6 +8,10 @@ public class PartidaNivel1 extends Partida {
     List<List<Recinto>> recintosCorrectos;
 
 
+    public PartidaNivel1(){
+        super();
+    }
+
     public PartidaNivel1(int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
                          int numeroDesvios) {
 
@@ -84,5 +88,6 @@ public class PartidaNivel1 extends Partida {
 
         recintosCorrectos = recintos;
     }
+
 
 }

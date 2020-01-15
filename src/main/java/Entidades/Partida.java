@@ -1,10 +1,8 @@
 package Entidades;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
-public class Partida {
+public abstract class Partida {
 
     int tiempoPlanificacion;
     int tiempoEjecucionTotal;
@@ -38,14 +36,12 @@ public class Partida {
         this.numeroDesvios = numeroDesvios;
 
         //Calculamos el tiempo de ejecución total en base a los tiempos parciales de cada visita
-        this.tiempoEjecucionTotal = tiempoVisitas.stream()
-                .collect(Collectors.summingInt(Integer::intValue));
+        this.tiempoEjecucionTotal = tiempoVisitas.stream().mapToInt(Integer::intValue).sum();
 
         //Normalizar los valores de caminos para que se ajusten a los requisitos
         normalizarCaminosRepetidos();
         //Calculamos el total de veces de caminos repetidos
-        this.puntuacionTotalVecesRutaRepetida = caminosRepetidos.stream()
-                .collect(Collectors.summingInt(Integer::intValue));
+        this.puntuacionTotalVecesRutaRepetida = caminosRepetidos.stream().mapToInt(Integer::intValue).sum();
 
 
     }
