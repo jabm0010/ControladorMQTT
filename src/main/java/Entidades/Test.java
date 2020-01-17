@@ -13,6 +13,12 @@ public class Test {
     boolean planMas123 = false;
 
 
+    public Test(){
+        this.partidaNivel1 = new PartidaNivel1();
+        this.partidaNivel2 = new PartidaNivel2();
+        this.usuario = new Usuario();
+    }
+
     public Test(PartidaNivel1 p1, PartidaNivel2 p2, Usuario usuario) {
         partidaNivel1 = p1;
         partidaNivel2 = p2;
