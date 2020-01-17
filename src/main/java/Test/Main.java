@@ -13,8 +13,10 @@ public class Main {
         String rutaArchivo = "C:\\Users\\jabm9\\OneDrive\\Escritorio\\Clases\\Entornos Virtuales y Simulacion\\prueba.xlsx";
         String hoja = "Hoja1";
 
-        ControladorExcel controladorExcel = new ControladorExcel(rutaArchivo, hoja, t);
-        controladorExcel.crearHojaResultados();
+        ControladorExcel controladorExcel = new ControladorExcel(rutaArchivo, t);
+        controladorExcel.crearHojaUsuario();
+        controladorExcel.crearHojaPartida(true);
+        controladorExcel.crearHojaPartida(false);
 
 
     }

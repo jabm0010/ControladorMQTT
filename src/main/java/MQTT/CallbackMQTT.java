@@ -60,10 +60,13 @@ public class CallbackMQTT implements MqttCallback {
         //Definir una ruta para indicar el fin y generar la hoja de calculo
         if(topic.endsWith("zoo/fin")){
 
+            //Prueba
             String rutaArchivo = "C:\\Users\\jabm9\\OneDrive\\Escritorio\\Clases\\Entornos Virtuales y Simulacion\\prueba.xlsx";
             String hoja = "Hoja1";
-            ControladorExcel cExcel = new ControladorExcel(rutaArchivo,hoja,test);
-            cExcel.crearHojaResultados();
+            ControladorExcel cExcel = new ControladorExcel(rutaArchivo,test);
+            cExcel.crearHojaUsuario();
+            cExcel.crearHojaPartida(true);
+            cExcel.crearHojaPartida(false);
         }
 
     }
