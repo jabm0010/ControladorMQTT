@@ -41,6 +41,11 @@ public class CallbackMQTT implements MqttCallback {
         receivedSignal.countDown();
 
         //Definir rutas para todos los campos
+
+        if (topic.endsWith("test")) {
+            System.out.println("Prueba"+message);
+        }
+
         if (topic.endsWith("zoo/usuario")) {
             Usuario usuario = gson.fromJson(message.toString(), Usuario.class);
             test.setUsuario(usuario);
@@ -65,8 +70,8 @@ public class CallbackMQTT implements MqttCallback {
             String hoja = "Hoja1";
             ControladorExcel cExcel = new ControladorExcel(rutaArchivo,test);
             cExcel.crearHojaUsuario();
-            cExcel.crearHojaPartida(true);
-            cExcel.crearHojaPartida(false);
+            cExcel.crearHojaPartida1();
+            //cExcel.crearHojaPartida2();
         }
 
     }

@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 public class ControladorExcel {
 
@@ -21,7 +22,19 @@ public class ControladorExcel {
     String[] hojas = new String[]{"Usuario", "Nivel 1", "Nivel 2", "Test "};
     Test test;
     String[] headerUsuario = new String[]{"Id", "Nombre", "Edad", "Genero", "Dom. Manual"};
-    String[] headerPartida = new String[]{"Tiempo planificación",
+    String[] headerPartida1 = new String[]{"Tiempo planificación",
+            "Tiempo ejecucion total",
+            "Recintos visitados",
+            "Tiempos de visita",
+            "Caminos repetidos",
+            "Puntuacion ruta repetida",
+            "Puntuacion recorrido",
+            "Nº desvios",
+            "Total errores",
+            "Puntuación total"
+    };
+
+    String[] headerPartida2 = new String[]{"Tiempo planificación",
             "Tiempo ejecucion total",
             "Recintos visitados",
             "Tiempos de visita",
@@ -34,12 +47,17 @@ public class ControladorExcel {
             "Puntuación total"
     };
 
+
     public ControladorExcel(String rutaArchivo, Test test) {
         this.rutaArchivo = rutaArchivo;
         this.test = test;
         libro = new XSSFWorkbook();
         File file;
         file = new File(rutaArchivo);
+        crearHojaUsuario();
+        crearHojaPartida1();
+        crearHojaPartida2();
+
         try (FileOutputStream fileOuS = new FileOutputStream(file)) {
             if (file.exists()) {// si el archivo existe se elimina
                 file.delete();
@@ -58,8 +76,8 @@ public class ControladorExcel {
     }
 
 
-    public void crearHojaUsuario(){
-        XSSFSheet hojaUsuario = libro.createSheet(hojas[0]);
+    public void crearHojaUsuario() {
+        XSSFSheet hojaUsuario = libro.createSheet("Usuario");
         CellStyle style = libro.createCellStyle();
         Font font = libro.createFont();
         font.setBold(true);
@@ -76,41 +94,92 @@ public class ControladorExcel {
         //Content
         XSSFRow rowContent = hojaUsuario.createRow(1);
         List<String> atributosUsuario = test.getUsuario().listAtributos();
-        for (int i = 0; i < headerPartida.length; i++) {
+        for (int i = 0; i < headerUsuario.length; i++) {
             XSSFCell cellContent = rowContent.createCell(i);
             cellContent.setCellStyle(style);
             cellContent.setCellStyle(style);
+            System.out.println(atributosUsuario.get(i));
             cellContent.setCellValue(atributosUsuario.get(i));
         }
 
 
     }
 
-    public void crearHojaPartida(boolean nivel) {
+    public void crearHojaPartida1() {
         XSSFSheet hojaPartida;
-        if(nivel) {
-             hojaPartida = libro.createSheet(hojas[1]);
-        }else{
-             hojaPartida = libro.createSheet(hojas[2]);
 
-        }
+        Map<Integer, List<String>> partida = test.getPartidaNivel1().getAtributosExcel();
+        hojaPartida = libro.createSheet(hojas[1]);
+
         CellStyle style = libro.createCellStyle();
         Font font = libro.createFont();
         font.setBold(true);
         style.setFont(font);
         XSSFRow rowHeaders = hojaPartida.createRow(0);
-
         //Headers
-        for (int i = 0; i < headerPartida.length; i++) {
+        for (int i = 0; i < headerPartida1.length; i++) {
             XSSFCell cell = rowHeaders.createCell(i);
             cell.setCellStyle(style);
-            cell.setCellValue(headerPartida[i]);
+            cell.setCellValue(headerPartida1[i]);
+        }
+
+        for (int i = 0; i < headerPartida1.length; i++) {
+            for (int j = 1; j <= partida.get(i).size(); j++) {
+                if (hojaPartida.getRow(j) == null) {
+                    hojaPartida.createRow(j);
+                    System.out.println("He creado la fila" + j);
+                }
+                XSSFRow rowContent = hojaPartida.getRow(j);
+                XSSFCell cellContent = rowContent.createCell(i);
+                cellContent.setCellStyle(style);
+                cellContent.setCellStyle(style);
+                int tmpJ = j - 1;
+                System.out.println("A printear " + partida.get(i).get(tmpJ));
+                cellContent.setCellValue(partida.get(i).get(tmpJ));
+
+            }
+
         }
 
 
+    }
 
 
+    public void crearHojaPartida2() {
+        XSSFSheet hojaPartida;
 
+        Map<Integer, List<String>> partida = test.getPartidaNivel2().getAtributosExcel();
+        hojaPartida = libro.createSheet(hojas[2]);
+
+        CellStyle style = libro.createCellStyle();
+        Font font = libro.createFont();
+        font.setBold(true);
+        style.setFont(font);
+        XSSFRow rowHeaders = hojaPartida.createRow(0);
+        //Headers
+        for (int i = 0; i < headerPartida2.length; i++) {
+            XSSFCell cell = rowHeaders.createCell(i);
+            cell.setCellStyle(style);
+            cell.setCellValue(headerPartida2[i]);
+        }
+
+        for (int i = 0; i < headerPartida2.length; i++) {
+            for (int j = 1; j <= partida.get(i).size(); j++) {
+                if (hojaPartida.getRow(j) == null) {
+                    hojaPartida.createRow(j);
+                    System.out.println("He creado la fila" + j);
+                }
+                XSSFRow rowContent = hojaPartida.getRow(j);
+                XSSFCell cellContent = rowContent.createCell(i);
+                cellContent.setCellStyle(style);
+                cellContent.setCellStyle(style);
+                int tmpJ = j - 1;
+                System.out.println("A printear " + partida.get(i).get(tmpJ));
+                cellContent.setCellValue(partida.get(i).get(tmpJ));
+
+            }
+
+        }
 
 
     }
