@@ -103,9 +103,38 @@ public class CallbackMQTT implements MqttCallback {
             controladorPosicion.crearFicheroPosiciones(posicionesNivel1.get(idUsuario),ruta+ficheroTxt1);
             controladorPosicion.crearFicheroPosiciones(posicionesNivel2.get(idUsuario),ruta+ficheroTxt2);
 
-
         }
 
+        /**
+         * Cuando un cliente unity se suscribe a esta ruta, el servidor empezará a publicar todas las posiciones
+         * del usuario indicado en el nivel 1
+         */
+        if(topic.endsWith("zoo/resultado/uno")){
+            String idUsuario = message.toString();
+            for(Posicion p : posicionesNivel1.get(idUsuario)){
+                String msg = gson.toJson(p);
+                MqttMessage message2send=new MqttMessage(msg.getBytes());
+                message2send.setQos(2);
+                message2send.setRetained(false);
+                this.myClient.publish("zoo/posicion",  message2send);
+            }
+        }
+
+        /**
+         * Cuando un cliente unity se suscribe a esta ruta, el servidor empezará a publicar todas las posiciones
+         * del usuario indicado en el nivel 2
+         */
+        if(topic.endsWith("zoo/resultado/dos")){
+            String idUsuario = message.toString();
+            for(Posicion p : posicionesNivel2.get(idUsuario)){
+                String msg = gson.toJson(p);
+                MqttMessage message2send=new MqttMessage(msg.getBytes());
+                message2send.setQos(2);
+                message2send.setRetained(false);
+                this.myClient.publish("zoo/posicion",  message2send);
+            }
+
+        }
     }
 
     @Override

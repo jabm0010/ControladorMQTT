@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0afe1fda-8532-43ed-9efd-c7d52d74d592" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controladores/ControladorPosicion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controladores/ControladorExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controladores/ControladorExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Partida.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Posicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Posicion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MQTT/CallbackMQTT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MQTT/CallbackMQTT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/FactoryPrueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/FactoryPrueba.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Controladores/ControladorExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Controladores/ControladorExcel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entidades/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidades/Partida.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entidades/PartidaNivel1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidades/PartidaNivel1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entidades/PartidaNivel2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidades/PartidaNivel2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entidades/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidades/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Entidades/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entidades/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MQTT/CallbackMQTT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MQTT/CallbackMQTT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/FactoryPrueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/FactoryPrueba.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test/Main.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
