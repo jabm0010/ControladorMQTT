@@ -1,6 +1,9 @@
 package Entidades;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Test {
 
     PartidaNivel1 partidaNivel1;
@@ -13,7 +16,7 @@ public class Test {
     boolean planMas123 = false;
 
 
-    public Test(){
+    public Test() {
         this.partidaNivel1 = new PartidaNivel1();
         this.partidaNivel2 = new PartidaNivel2();
         this.usuario = new Usuario();
@@ -25,7 +28,7 @@ public class Test {
         this.usuario = usuario;
     }
 
-    private void calcularPuntuacionPerfil() {
+    public void calcularPuntuacionPerfil() {
 
         int puntuacionTotal = partidaNivel1.puntuacionTotal + partidaNivel2.puntuacionTotal;
         if (puntuacionTotal == 16) {
@@ -105,5 +108,15 @@ public class Test {
 
     public void setPlanMas123(boolean planMas123) {
         this.planMas123 = planMas123;
+    }
+
+
+    public List<String> listAtributos() {
+        List<String> lRet = new ArrayList<>();
+
+        lRet.add(String.valueOf(puntuacionPerfil));
+        lRet.add(String.valueOf(planMas15));
+        lRet.add(String.valueOf(isPlanMas123()));
+        return lRet;
     }
 }

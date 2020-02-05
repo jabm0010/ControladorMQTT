@@ -47,16 +47,26 @@ public class ControladorExcel {
             "Puntuación total"
     };
 
+    String[] headerResultadoTest = new String[]{"Puntuacion perfil",
+            "+15",
+            "+123"};
+
 
     public ControladorExcel(String rutaArchivo, Test test) {
         this.rutaArchivo = rutaArchivo;
         this.test = test;
+
+    }
+
+
+    public void crearExcel() {
         libro = new XSSFWorkbook();
         File file;
         file = new File(rutaArchivo);
         crearHojaUsuario();
         crearHojaPartida1();
         crearHojaPartida2();
+        crearHojaTest();
 
         try (FileOutputStream fileOuS = new FileOutputStream(file)) {
             if (file.exists()) {// si el archivo existe se elimina
@@ -74,9 +84,6 @@ public class ControladorExcel {
             e.printStackTrace();
         }
     }
-
-
-
 
     public void crearHojaUsuario() {
         XSSFSheet hojaUsuario = libro.createSheet("Usuario");
@@ -183,6 +190,34 @@ public class ControladorExcel {
 
         }
 
+
+    }
+
+    public void crearHojaTest(){
+        XSSFSheet hojaPartida;
+        test.calcularPuntuacionPerfil();
+        hojaPartida = libro.createSheet(hojas[3]);
+
+        CellStyle style = libro.createCellStyle();
+        Font font = libro.createFont();
+        font.setBold(true);
+        style.setFont(font);
+        XSSFRow rowHeaders = hojaPartida.createRow(0);
+        //Headers
+        for (int i = 0; i < headerResultadoTest.length; i++) {
+            XSSFCell cell = rowHeaders.createCell(i);
+            cell.setCellStyle(style);
+            cell.setCellValue(headerResultadoTest[i]);
+        }
+        XSSFRow rowContent = hojaPartida.createRow(1);
+        List<String> atributosTest = test.listAtributos();
+
+        for (int i = 0; i < headerResultadoTest.length; i++) {
+            XSSFCell cellContent = rowContent.createCell(i);
+            cellContent.setCellStyle(style);
+            cellContent.setCellStyle(style);
+            cellContent.setCellValue(atributosTest.get(i));
+        }
 
     }
 

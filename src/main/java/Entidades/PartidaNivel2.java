@@ -17,10 +17,10 @@ public class PartidaNivel2 extends Partida {
     }
 
     public PartidaNivel2(int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
-                         int numeroDesvios) {
+                         int numeroDesvios, Long identificador) {
 
 
-        super(tiempoPlanificacion, listaRecintosVisitados, tiempoVisitas, caminosRepetidos, numeroDesvios);
+        super(tiempoPlanificacion, listaRecintosVisitados, tiempoVisitas, caminosRepetidos, numeroDesvios, identificador);
 
         iniciarRecintosCorrectos();
         calcularPuntuacionRecorrido();

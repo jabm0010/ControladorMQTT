@@ -14,6 +14,7 @@ public class Main {
         String hoja = "Hoja1";
 
         ControladorExcel controladorExcel = new ControladorExcel(rutaArchivo, t);
+        controladorExcel.crearExcel();
       //  controladorExcel.crearHojaUsuario();
    //     controladorExcel.crearHojaPartida1();
        // controladorExcel.crearHojaPartida(2);

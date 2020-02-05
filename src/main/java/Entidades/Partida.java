@@ -1,5 +1,6 @@
 package Entidades;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Partida {
@@ -36,6 +37,17 @@ public abstract class Partida {
         this.tiempoVisitas = tiempoVisitas;
         this.caminosRepetidos = caminosRepetidos;
         this.numeroDesvios = numeroDesvios;
+
+        List<Integer> tiempoVisitasAjustado = new ArrayList<>();
+        for(int i = 0; i< tiempoVisitas.size();i++){
+            if(i == 0){
+                tiempoVisitasAjustado.add(tiempoVisitas.get(i));
+            }else{
+                tiempoVisitasAjustado.add(tiempoVisitas.get(i)-tiempoVisitas.get(i-1));
+            }
+        }
+
+        this.tiempoVisitas = tiempoVisitasAjustado;
 
         //Calculamos el tiempo de ejecución total en base a los tiempos parciales de cada visita
         this.tiempoEjecucionTotal = tiempoVisitas.stream().mapToInt(Integer::intValue).sum();

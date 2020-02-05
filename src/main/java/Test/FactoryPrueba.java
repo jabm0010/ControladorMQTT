@@ -24,7 +24,7 @@ public class FactoryPrueba {
 
 
     public PartidaNivel1 partidaNivel1Prueba(){
-
+        long identificador = 1;
         int tiempoPlanificacion = 20;
         int numeroDesvios = 3;
         List<Recinto> listaRecintosVisitados = new ArrayList<>();
@@ -63,10 +63,11 @@ public class FactoryPrueba {
         caminosRepetidos.add(1);
         caminosRepetidos.add(1);
 
-        return new PartidaNivel1(tiempoPlanificacion, listaRecintosVisitados, listaTiempoVisitas, caminosRepetidos, numeroDesvios);
+        return new PartidaNivel1(tiempoPlanificacion, listaRecintosVisitados, listaTiempoVisitas, caminosRepetidos, numeroDesvios,identificador);
     }
 
     public PartidaNivel2 partidaNivel2Prueba(){
+        long identificador = 1;
         int tiempoPlanificacion = 20;
         int numeroDesvios = 3;
         List<Recinto> listaRecintosVisitados = new ArrayList<>();
@@ -105,7 +106,7 @@ public class FactoryPrueba {
         caminosRepetidos.add(1);
         caminosRepetidos.add(1);
 
-        return new PartidaNivel2(tiempoPlanificacion, listaRecintosVisitados, listaTiempoVisitas, caminosRepetidos, numeroDesvios);
+        return new PartidaNivel2(tiempoPlanificacion, listaRecintosVisitados, listaTiempoVisitas, caminosRepetidos, numeroDesvios,identificador);
 
 
     }
