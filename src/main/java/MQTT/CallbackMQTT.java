@@ -91,9 +91,9 @@ public class CallbackMQTT implements MqttCallback {
             String ficheroTxt1 = idUsuario+"-nivel1.txt";
             String ficheroTxt2 = idUsuario+"-nivel2.txt";
 
-
+            String userprofile = System.getenv("USERPROFILE");
             Long identificador = Long.valueOf(idUsuario);
-            String ruta =  "C:\\Users\\jabm9\\OneDrive\\Escritorio\\Clases\\Entornos Virtuales y Simulacion\\";
+            String ruta =  userprofile+"\\Desktop\\";
             String rutaArchivo = ruta+ficheroExcel;
 
             ControladorExcel cExcel = new ControladorExcel(rutaArchivo,tests.get(identificador));
