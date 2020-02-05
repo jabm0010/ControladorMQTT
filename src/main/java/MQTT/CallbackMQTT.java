@@ -11,6 +11,8 @@ import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.concurrent.CountDownLatch;
 
 public class CallbackMQTT implements MqttCallback {
@@ -19,12 +21,12 @@ public class CallbackMQTT implements MqttCallback {
 
     CountDownLatch receivedSignal;
     MqttClient myClient;
-    Test test;
+    Map<Long, Test> tests;
 
     CallbackMQTT(CountDownLatch receivedSignal, MqttClient myClient) {
         this.receivedSignal = receivedSignal;
         this.myClient = myClient;
-        this.test = new Test();
+        tests = new TreeMap<>();
     }
 
 
@@ -48,17 +50,20 @@ public class CallbackMQTT implements MqttCallback {
 
         if (topic.endsWith("zoo/usuario")) {
             Usuario usuario = gson.fromJson(message.toString(), Usuario.class);
-            test.setUsuario(usuario);
+            tests.put(usuario.getIdentificador(), new Test());
+            tests.get(usuario.getIdentificador()).setUsuario(usuario);
         }
 
         if (topic.endsWith("zoo/partida/uno")) {
             PartidaNivel1 pniveluno = gson.fromJson(message.toString(), PartidaNivel1.class);
-            test.setPartidaNivel1(pniveluno);
+            tests.get(pniveluno.getIdentificador()).setPartidaNivel1(pniveluno);
+
         }
 
         if (topic.endsWith("zoo/partida/dos")) {
             PartidaNivel2 pniveldos = gson.fromJson(message.toString(), PartidaNivel2.class);
-            test.setPartidaNivel2(pniveldos);
+            tests.get(pniveldos.getIdentificador()).setPartidaNivel2(pniveldos);
+
         }
 
 

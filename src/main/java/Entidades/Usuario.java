@@ -10,6 +10,7 @@ public class Usuario {
     int edad;
     String genero;
     String dominanciaManual;
+    int fecha;
 
     public Usuario(){
         this.nombre = "";
@@ -42,7 +43,51 @@ public class Usuario {
         return  lRet;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public long getIdentificador() {
+        return identificador;
+    }
 
+    public void setIdentificador(long identificador) {
+        this.identificador = identificador;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getDominanciaManual() {
+        return dominanciaManual;
+    }
+
+    public void setDominanciaManual(String dominanciaManual) {
+        this.dominanciaManual = dominanciaManual;
+    }
+
+    public int getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
+    }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 public abstract class Partida {
 
+    Long identificador;
     int tiempoPlanificacion;
     int tiempoEjecucionTotal;
 
@@ -27,8 +28,9 @@ public abstract class Partida {
 
 
     public Partida (int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
-                   int numeroDesvios){
+                   int numeroDesvios, Long identificador){
 
+        this.identificador = identificador;
         this.tiempoPlanificacion = tiempoPlanificacion;
         this.listaRecintosVisitados = listaRecintosVisitados;
         this.tiempoVisitas = tiempoVisitas;
@@ -143,5 +145,21 @@ public abstract class Partida {
 
     public void setPuntuacionTotal(int puntuacionTotal) {
         this.puntuacionTotal = puntuacionTotal;
+    }
+
+    public Long getIdentificador() {
+        return identificador;
+    }
+
+    public void setIdentificador(Long identificador) {
+        this.identificador = identificador;
+    }
+
+    public int getNumLugaresIncorrectamenteVisitados() {
+        return numLugaresIncorrectamenteVisitados;
+    }
+
+    public void setNumLugaresIncorrectamenteVisitados(int numLugaresIncorrectamenteVisitados) {
+        this.numLugaresIncorrectamenteVisitados = numLugaresIncorrectamenteVisitados;
     }
 }

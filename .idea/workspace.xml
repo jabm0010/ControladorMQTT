@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0afe1fda-8532-43ed-9efd-c7d52d74d592" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controladores/ControladorExcel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controladores/ControladorExcel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/PartidaNivel2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entidades/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entidades/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/MQTT/CallbackMQTT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MQTT/CallbackMQTT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
