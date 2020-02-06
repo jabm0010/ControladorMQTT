@@ -21,15 +21,13 @@ public abstract class Partida {
     int puntuacionTotal;
 
 
-
-
-    public Partida(){
+    public Partida() {
 
     }
 
 
-    public Partida (int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
-                   int numeroDesvios, Long identificador){
+    public Partida(int tiempoPlanificacion, List<Recinto> listaRecintosVisitados, List<Integer> tiempoVisitas, List<Integer> caminosRepetidos,
+                   int numeroDesvios, Long identificador) {
 
         this.identificador = identificador;
         this.tiempoPlanificacion = tiempoPlanificacion;
@@ -38,44 +36,57 @@ public abstract class Partida {
         this.caminosRepetidos = caminosRepetidos;
         this.numeroDesvios = numeroDesvios;
 
+
+    }
+
+
+    public void inicializarPartidaGeneral() {
+
+        this.tiempoEjecucionTotal = tiempoVisitas.get(tiempoVisitas.size() - 1);
+
         List<Integer> tiempoVisitasAjustado = new ArrayList<>();
-        for(int i = 0; i< tiempoVisitas.size();i++){
-            if(i == 0){
+        for (int i = 0; i < tiempoVisitas.size(); i++) {
+            if (i == 0) {
                 tiempoVisitasAjustado.add(tiempoVisitas.get(i));
-            }else{
-                tiempoVisitasAjustado.add(tiempoVisitas.get(i)-tiempoVisitas.get(i-1));
+            } else {
+                tiempoVisitasAjustado.add(tiempoVisitas.get(i) - tiempoVisitas.get(i - 1));
             }
         }
 
         this.tiempoVisitas = tiempoVisitasAjustado;
 
         //Calculamos el tiempo de ejecución total en base a los tiempos parciales de cada visita
-        this.tiempoEjecucionTotal = tiempoVisitas.stream().mapToInt(Integer::intValue).sum();
+
 
         //Normalizar los valores de caminos para que se ajusten a los requisitos
         normalizarCaminosRepetidos();
         //Calculamos el total de veces de caminos repetidos
         this.puntuacionTotalVecesRutaRepetida = caminosRepetidos.stream().mapToInt(Integer::intValue).sum();
-
-
     }
 
 
-
-    protected void calcularTotalErrores(){
-        this.totalErrores = numeroDesvios+puntuacionTotalVecesRutaRepetida+numLugaresIncorrectamenteVisitados;
+    protected void calcularTotalErrores() {
+        this.totalErrores = numeroDesvios + puntuacionTotalVecesRutaRepetida + numLugaresIncorrectamenteVisitados;
     }
 
-    protected void calcularPuntuacionTotal(){
+    protected void calcularPuntuacionTotal() {
         this.puntuacionTotal = puntuacionRecorrido - totalErrores;
+        if(puntuacionTotal < 0){
+            this.puntuacionTotal = 0;
+        }
     }
 
-    public void normalizarCaminosRepetidos(){
-        for(int i : this.caminosRepetidos){
-            if(i >0){
-                i--;
+    public void normalizarCaminosRepetidos() {
+        List<Integer> caminosAjustados = new ArrayList<>();
+        for (int i : this.caminosRepetidos) {
+            if (caminosRepetidos.get(i) > 0) {
+                caminosAjustados.add(i-1);
+            }else{
+                caminosAjustados.add(i);
             }
         }
+
+        caminosRepetidos = caminosAjustados;
     }
 
 

@@ -10,8 +10,12 @@ public class Main {
     public static void main(String[] args) {
         FactoryPrueba f = new FactoryPrueba();
         Test t = new Test(f.partidaNivel1Prueba(),f.partidaNivel2Prueba(),f.crearUsuarioPrueba());
-        String rutaArchivo = "C:\\Users\\jabm9\\OneDrive\\Escritorio\\Clases\\Entornos Virtuales y Simulacion\\prueba.xlsx";
-        String hoja = "Hoja1";
+        String ficheroExcel = "usuarioPrueba"+".xlsx";
+        String userprofile = System.getenv("USERPROFILE");
+        String ruta =  userprofile+"\\Desktop\\";
+        String rutaArchivo = ruta+ficheroExcel;
+
+
 
         ControladorExcel controladorExcel = new ControladorExcel(rutaArchivo, t);
         controladorExcel.crearExcel();

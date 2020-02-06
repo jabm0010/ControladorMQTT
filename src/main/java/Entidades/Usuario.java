@@ -10,7 +10,7 @@ public class Usuario {
     int edad;
     String genero;
     String dominanciaManual;
-    int fecha;
+    String fecha;
 
     public Usuario(){
         this.nombre = "";
@@ -83,11 +83,11 @@ public class Usuario {
         this.dominanciaManual = dominanciaManual;
     }
 
-    public int getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(int fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 }

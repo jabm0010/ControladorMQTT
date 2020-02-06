@@ -44,7 +44,7 @@ public class CallbackMQTT implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage message) throws Exception {
 
-        System.out.println("Mensaje: " + message);
+        //System.out.println("Mensaje: " + message);
         receivedSignal.countDown();
 
         //Definir rutas para todos los campos
@@ -54,6 +54,7 @@ public class CallbackMQTT implements MqttCallback {
         }
 
         if (topic.endsWith("zoo/usuario")) {
+            System.out.println("Usuario creado con datos: "+message);
             Usuario usuario = gson.fromJson(message.toString(), Usuario.class);
             tests.put(usuario.getIdentificador(), new Test());
             posicionesNivel1.put(usuario.getIdentificador(), new ArrayList<>());
@@ -63,12 +64,21 @@ public class CallbackMQTT implements MqttCallback {
 
         if (topic.endsWith("zoo/partida/uno")) {
             PartidaNivel1 pniveluno = gson.fromJson(message.toString(), PartidaNivel1.class);
+            System.out.println("Partida nivel 1 creada con datos: "+message);
+
+            pniveluno.inicializarPartidaNivel1();
+            System.out.println(pniveluno.toString());
+
+
             tests.get(pniveluno.getIdentificador()).setPartidaNivel1(pniveluno);
 
         }
 
         if (topic.endsWith("zoo/partida/dos")) {
             PartidaNivel2 pniveldos = gson.fromJson(message.toString(), PartidaNivel2.class);
+            System.out.println("Partida nivel w creada con datos: "+message);
+            pniveldos.inicalizarPartidaNivel2();
+            System.out.println(pniveldos.toString());
             tests.get(pniveldos.getIdentificador()).setPartidaNivel2(pniveldos);
 
         }
@@ -85,12 +95,14 @@ public class CallbackMQTT implements MqttCallback {
 
         //Definir una ruta para indicar el fin y generar la hoja de calculo
         if(topic.endsWith("zoo/fin")){
+            System.out.println("El usuario con id: "+message+" ha terminado la partida");
 
             String idUsuario = message.toString();
-            String ficheroExcel = idUsuario+".xlsx";
+
             String ficheroTxt1 = idUsuario+"-nivel1.txt";
             String ficheroTxt2 = idUsuario+"-nivel2.txt";
 
+            String ficheroExcel = idUsuario+".xlsx";
             String userprofile = System.getenv("USERPROFILE");
             Long identificador = Long.valueOf(idUsuario);
             String ruta =  userprofile+"\\Desktop\\";
@@ -102,6 +114,8 @@ public class CallbackMQTT implements MqttCallback {
             ControladorPosicion controladorPosicion = new ControladorPosicion();
             controladorPosicion.crearFicheroPosiciones(posicionesNivel1.get(idUsuario),ruta+ficheroTxt1);
             controladorPosicion.crearFicheroPosiciones(posicionesNivel2.get(idUsuario),ruta+ficheroTxt2);
+
+            System.out.println("Final!");
 
         }
 

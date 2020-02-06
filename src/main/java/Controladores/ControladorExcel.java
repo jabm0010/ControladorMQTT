@@ -29,6 +29,7 @@ public class ControladorExcel {
             "Caminos repetidos",
             "Puntuacion ruta repetida",
             "Puntuacion recorrido",
+            "Nº Lugares incorrectamente visitados",
             "Nº desvios",
             "Total errores",
             "Puntuación total"
@@ -47,7 +48,8 @@ public class ControladorExcel {
             "Puntuación total"
     };
 
-    String[] headerResultadoTest = new String[]{"Puntuacion perfil",
+    String[] headerResultadoTest = new String[]{"Puntuacion Total",
+            "Puntuacion perfil",
             "+15",
             "+123"};
 
@@ -111,6 +113,9 @@ public class ControladorExcel {
             cellContent.setCellValue(atributosUsuario.get(i));
         }
 
+        for (int i = 0; i < headerUsuario.length; i++) {
+            hojaUsuario.autoSizeColumn(i);
+        }
 
     }
 
@@ -148,6 +153,10 @@ public class ControladorExcel {
 
             }
 
+        }
+
+        for (int i = 0; i < headerPartida1.length; i++) {
+            hojaPartida.autoSizeColumn(i);
         }
 
 
@@ -189,6 +198,9 @@ public class ControladorExcel {
             }
 
         }
+        for (int i = 0; i < headerPartida2.length; i++) {
+            hojaPartida.autoSizeColumn(i);
+        }
 
 
     }
@@ -217,6 +229,10 @@ public class ControladorExcel {
             cellContent.setCellStyle(style);
             cellContent.setCellStyle(style);
             cellContent.setCellValue(atributosTest.get(i));
+        }
+
+        for (int i = 0; i < headerResultadoTest.length; i++) {
+            hojaPartida.autoSizeColumn(i);
         }
 
     }

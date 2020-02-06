@@ -11,6 +11,7 @@ public class Test {
     Usuario usuario;
 
 
+    int puntuacionTotal;
     int puntuacionPerfil;
     boolean planMas15 = false;
     boolean planMas123 = false;
@@ -30,7 +31,7 @@ public class Test {
 
     public void calcularPuntuacionPerfil() {
 
-        int puntuacionTotal = partidaNivel1.puntuacionTotal + partidaNivel2.puntuacionTotal;
+        puntuacionTotal = partidaNivel1.puntuacionTotal + partidaNivel2.puntuacionTotal;
         if (puntuacionTotal == 16) {
             puntuacionPerfil = 4;
         } else if (puntuacionTotal >= 11) {
@@ -114,9 +115,20 @@ public class Test {
     public List<String> listAtributos() {
         List<String> lRet = new ArrayList<>();
 
+        lRet.add(String.valueOf(puntuacionTotal));
         lRet.add(String.valueOf(puntuacionPerfil));
-        lRet.add(String.valueOf(planMas15));
-        lRet.add(String.valueOf(isPlanMas123()));
+        if(planMas15){
+            lRet.add("SI");
+        }else{
+            lRet.add("NO");
+        }
+
+        if(planMas123){
+            lRet.add("SI");
+        }else{
+            lRet.add("NO");
+        }
+
         return lRet;
     }
 }
