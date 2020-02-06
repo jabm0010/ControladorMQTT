@@ -99,7 +99,7 @@ public class FactoryPrueba {
         listaTiempoVisitas.add(91);
         listaTiempoVisitas.add(120);
 
-        caminosRepetidos.add(1);
+        caminosRepetidos.add(0);
         caminosRepetidos.add(2);
         caminosRepetidos.add(1);
         caminosRepetidos.add(2);

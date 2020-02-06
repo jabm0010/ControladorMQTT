@@ -78,11 +78,12 @@ public abstract class Partida {
 
     public void normalizarCaminosRepetidos() {
         List<Integer> caminosAjustados = new ArrayList<>();
-        for (int i : this.caminosRepetidos) {
-            if (caminosRepetidos.get(i) > 0) {
-                caminosAjustados.add(i-1);
+        for(int i = 0; i<caminosRepetidos.size();i++){
+            if(caminosRepetidos.get(i)>0){
+                int restarUno = caminosRepetidos.get(i)-1;
+                caminosAjustados.add(i,restarUno);
             }else{
-                caminosAjustados.add(i);
+                caminosAjustados.add(i,caminosRepetidos.get(i));
             }
         }
 

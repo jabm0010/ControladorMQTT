@@ -110,8 +110,9 @@ public class CallbackMQTT implements MqttCallback {
             String rutaArchivo = ruta+ficheroExcel;
 
             ControladorPosicion controladorPosicion = new ControladorPosicion();
-            controladorPosicion.crearFicheroPosiciones(posicionesNivel1.get(idUsuario),ruta+ficheroTxt1);
-            controladorPosicion.crearFicheroPosiciones(posicionesNivel2.get(idUsuario),ruta+ficheroTxt2);
+            controladorPosicion.crearFicheroPosiciones(posicionesNivel1.get(identificador),ruta+ficheroTxt1);
+            controladorPosicion.crearFicheroPosiciones(posicionesNivel2.get(identificador
+            ),ruta+ficheroTxt2);
 
             ControladorExcel cExcel = new ControladorExcel(rutaArchivo,tests.get(identificador));
             cExcel.crearExcel();
