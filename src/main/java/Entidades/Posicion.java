@@ -15,15 +15,15 @@ public class Posicion {
     public Posicion() {
         this.identificador = 0;
         this.nivel = 1;
-        int x = 0;
-        int y = 0;
+
+
     }
 
-    public Posicion(long identificador, int nivel, int x, int y) {
+    public Posicion(long identificador, int nivel, int x, int z) {
         this.identificador = identificador;
         this.nivel = nivel;
         this.x = x;
-        this.y = y;
+        this.y = z;
     }
 
     public long getIdentificador() {

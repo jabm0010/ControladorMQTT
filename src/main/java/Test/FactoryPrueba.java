@@ -1,9 +1,6 @@
 package Test;
 
-import Entidades.PartidaNivel1;
-import Entidades.PartidaNivel2;
-import Entidades.Recinto;
-import Entidades.Usuario;
+import Entidades.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,6 +125,15 @@ public class FactoryPrueba {
         return p;
         //return new PartidaNivel2(tiempoPlanificacion, listaRecintosVisitados, listaTiempoVisitas, caminosRepetidos, numeroDesvios,identificador);
 
+
+    }
+
+    public List<Posicion> generarPosicionesPrueba(){
+        List<Posicion> posiciones = new ArrayList<>();
+        posiciones.add(new Posicion(10,1, 280,120));
+        posiciones.add(new Posicion(10,1, 283,140));
+
+        return posiciones;
 
     }
 }

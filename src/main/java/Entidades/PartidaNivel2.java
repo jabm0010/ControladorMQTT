@@ -39,7 +39,7 @@ public class PartidaNivel2 extends Partida {
 
         for (int i = 0; i < listaRecintosVisitados.size(); i++) {
             if (recintosCorrectos.size() > i) {
-                if (listaRecintosVisitados.get(i).recinto == recintosCorrectos.get(i).recinto) {
+                if (listaRecintosVisitados.get(i).recinto.equals(recintosCorrectos.get(i).recinto)) {
                     super.puntuacionRecorrido++;
                 } else {
                     super.numLugaresIncorrectamenteVisitados++;

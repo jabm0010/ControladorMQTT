@@ -41,7 +41,7 @@ public class PartidaNivel1 extends Partida {
             boolean recintoCorrecto = false;
             if (recintosCorrectos.size() > i) {
                 for (Recinto r : recintosCorrectos.get(i)) {
-                    if (listaRecintosVisitados.get(i).recinto == r.recinto) {
+                    if (listaRecintosVisitados.get(i).recinto.equals(r.recinto)) {
                         recintoCorrecto = true;
                     }
                 }

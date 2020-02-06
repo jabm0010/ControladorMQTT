@@ -76,7 +76,7 @@ public class CallbackMQTT implements MqttCallback {
 
         if (topic.endsWith("zoo/partida/dos")) {
             PartidaNivel2 pniveldos = gson.fromJson(message.toString(), PartidaNivel2.class);
-            System.out.println("Partida nivel w creada con datos: "+message);
+            System.out.println("Partida nivel 2 creada con datos: "+message);
             pniveldos.inicalizarPartidaNivel2();
             System.out.println(pniveldos.toString());
             tests.get(pniveldos.getIdentificador()).setPartidaNivel2(pniveldos);
@@ -84,6 +84,7 @@ public class CallbackMQTT implements MqttCallback {
         }
 
         if(topic.endsWith("zoo/posicion")){
+            //System.out.println("Hola, estoy recibiendo posicion");
             Posicion p = gson.fromJson(message.toString(),Posicion.class);
             if(p.getNivel() == 1){
                 posicionesNivel1.get(p.getIdentificador()).add(p);
@@ -99,8 +100,8 @@ public class CallbackMQTT implements MqttCallback {
 
             String idUsuario = message.toString();
 
-            String ficheroTxt1 = idUsuario+"-nivel1.txt";
-            String ficheroTxt2 = idUsuario+"-nivel2.txt";
+            String ficheroTxt1 = idUsuario+"nivel1.txt";
+            String ficheroTxt2 = idUsuario+"nivel2.txt";
 
             String ficheroExcel = idUsuario+".xlsx";
             String userprofile = System.getenv("USERPROFILE");
@@ -108,12 +109,12 @@ public class CallbackMQTT implements MqttCallback {
             String ruta =  userprofile+"\\Desktop\\";
             String rutaArchivo = ruta+ficheroExcel;
 
-            ControladorExcel cExcel = new ControladorExcel(rutaArchivo,tests.get(identificador));
-            cExcel.crearExcel();;
-
             ControladorPosicion controladorPosicion = new ControladorPosicion();
             controladorPosicion.crearFicheroPosiciones(posicionesNivel1.get(idUsuario),ruta+ficheroTxt1);
             controladorPosicion.crearFicheroPosiciones(posicionesNivel2.get(idUsuario),ruta+ficheroTxt2);
+
+            ControladorExcel cExcel = new ControladorExcel(rutaArchivo,tests.get(identificador));
+            cExcel.crearExcel();
 
             System.out.println("Final!");
 

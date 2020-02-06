@@ -109,7 +109,7 @@ public class ControladorExcel {
             XSSFCell cellContent = rowContent.createCell(i);
             cellContent.setCellStyle(style);
             cellContent.setCellStyle(style);
-            System.out.println(atributosUsuario.get(i));
+           // System.out.println(atributosUsuario.get(i));
             cellContent.setCellValue(atributosUsuario.get(i));
         }
 
@@ -141,14 +141,14 @@ public class ControladorExcel {
             for (int j = 1; j <= partida.get(i).size(); j++) {
                 if (hojaPartida.getRow(j) == null) {
                     hojaPartida.createRow(j);
-                    System.out.println("He creado la fila" + j);
+                  // System.out.println("He creado la fila" + j);
                 }
                 XSSFRow rowContent = hojaPartida.getRow(j);
                 XSSFCell cellContent = rowContent.createCell(i);
                 cellContent.setCellStyle(style);
                 cellContent.setCellStyle(style);
                 int tmpJ = j - 1;
-                System.out.println("A printear " + partida.get(i).get(tmpJ));
+              //  System.out.println("A printear " + partida.get(i).get(tmpJ));
                 cellContent.setCellValue(partida.get(i).get(tmpJ));
 
             }
@@ -185,14 +185,14 @@ public class ControladorExcel {
             for (int j = 1; j <= partida.get(i).size(); j++) {
                 if (hojaPartida.getRow(j) == null) {
                     hojaPartida.createRow(j);
-                    System.out.println("He creado la fila" + j);
+                  //  System.out.println("He creado la fila" + j);
                 }
                 XSSFRow rowContent = hojaPartida.getRow(j);
                 XSSFCell cellContent = rowContent.createCell(i);
                 cellContent.setCellStyle(style);
                 cellContent.setCellStyle(style);
                 int tmpJ = j - 1;
-                System.out.println("A printear " + partida.get(i).get(tmpJ));
+             //   System.out.println("A printear " + partida.get(i).get(tmpJ));
                 cellContent.setCellValue(partida.get(i).get(tmpJ));
 
             }
