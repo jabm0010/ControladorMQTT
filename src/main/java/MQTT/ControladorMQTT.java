@@ -13,7 +13,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class ControladorMQTT {
 
-    static String ip_broker="tcp://192.168.0.189:1883";
+    static String ip_broker="tcp://localhost:1883";
     static int pubQoS = 1;
 
     static public String getMac() throws UnknownHostException, SocketException {

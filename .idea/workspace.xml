@@ -7,8 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0afe1fda-8532-43ed-9efd-c7d52d74d592" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ControladorMQTT_jar/ControladorMQTT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ControladorMQTT_jar/ControladorMQTT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MQTT/ControladorMQTT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MQTT/ControladorMQTT.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="GenerateAntBuildDialog.backupFiles" value="true" />
+    <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="controladormqtt" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
@@ -165,22 +171,26 @@
     </state>
     <state x="549" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581012392368" />
     <state x="686" y="193" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581015973133" />
-    <state width="1493" height="201" key="GridCell.Tab.0.bottom" timestamp="1581014287526">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1581074162692">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="201" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1581014287526" />
-    <state width="1493" height="201" key="GridCell.Tab.0.center" timestamp="1581014287525">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581074162692" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1581074162692">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="201" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1581014287525" />
-    <state width="1493" height="201" key="GridCell.Tab.0.left" timestamp="1581014287525">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581074162692" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1581074162692">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="201" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1581014287525" />
-    <state width="1493" height="201" key="GridCell.Tab.0.right" timestamp="1581014287526">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581074162692" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1581074162692">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1493" height="201" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1581014287526" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581074162692" />
     <state width="1493" height="247" key="GridCell.Tab.1.bottom" timestamp="1580992667962">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
